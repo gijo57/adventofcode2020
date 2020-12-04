@@ -15,7 +15,6 @@ with open('input.txt', 'r') as f:
         location_index += 3
 print(tree_count)
 
-
 def tree_counter(right, down):
     f = [l.strip('\n') for l in open('input.txt', 'r').readlines()]
     location_index = 0
