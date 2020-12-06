@@ -14,7 +14,6 @@ with open('input.txt', 'r') as f:
         members = len(g.split('\n'))
         questions = list(''.join(g.split()))
         for char in set(questions):
-            print(questions, char, members)
             if (questions.count(char) == members):
                 answer_count2 += 1
 
