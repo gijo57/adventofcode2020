@@ -37,6 +37,8 @@ with open('input.txt', 'r') as f:
                 validity.append(150 <= height <= 193)
             elif (unit == 'in'):
                 validity.append(59 <= height <= 76)
+            else:
+                validity.append(False)
         if ('hcl' in pass_dict):
             validity.append(re.match(r'#[\da-f]{6}$', str(pass_dict.get('hcl'))))
         if ('ecl' in pass_dict):
