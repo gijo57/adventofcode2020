@@ -29,8 +29,7 @@ def count_occupied_seats(seats):
             changed += 1
 
     if (changed == 0):
-        result = (helper_seats == '#').sum()
-        return result
+        return (helper_seats == '#').sum()
     else:
         return count_occupied_seats(helper_seats)
 
