@@ -9,21 +9,24 @@ for b in bags:
     bag_dict[b[0]] = b[1:]
 
 
-def check_contents(root, bag):
-    print(root, bag)
+def check_contents(original_root, bag):
+    root = bag[0]
     contents = bag[1]
+
     if ('shiny gold' in contents):
         return root
     else:
-        for i in contents:
-            if (i in bag_dict.keys()):
-                bag = (i, bag_dict[i])
-                return check_contents(root, bag)
+        for b in contents:
+            if (b in bag_dict.keys()):
+                bag = (b, bag_dict[b])
+                return check_contents(original_root, bag)
 
 
 legit_bags = []
 
 for bag in bag_dict.items():
-    check_contents(bag[0], bag)
+    legit_bags.append(check_contents(bag, bag))
 
-answer = len(set(legit_bags))
+legit_bags = [b for b in legit_bags if b is not None]
+answer = len(legit_bags)
+print(legit_bags, answer)
