@@ -17,7 +17,6 @@ def mask_value(mask, value):
 
 with open('input.txt') as file:
     memory = {}
-    mask = ''
     for line in file:
         if ('mask' in line):
             mask = line.split(" = ")[1].strip('\n')
