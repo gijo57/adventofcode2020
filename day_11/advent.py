@@ -1,16 +1,20 @@
 import numpy as np
 import copy
+import time
+
+start = time.process_time()
 
 
 def get_neighbor_states(seats, ix, iy):
-    neighbors = []
+    neighbors = 0
     for x in range(ix-1, ix+2):
         for y in range(iy-1, iy+2):
             if (ix == x and iy == y):
                 continue
             if ((x >= 0 and y >= 0) and (x < int(seats.shape[0]) and y < int(seats.shape[1]))):
-                neighbors.append(seats[x, y])
-    return neighbors.count('#')
+                if (seats[x,y] == '#'):
+                    neighbors += 1
+    return neighbors
 
 
 def count_occupied_seats(seats):
@@ -39,3 +43,6 @@ with open('input.txt', 'r') as file:
 
 answer = count_occupied_seats(seats)
 print(answer)
+
+end = time.process_time()
+print(end - start)

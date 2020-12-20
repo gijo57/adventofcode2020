@@ -1,3 +1,5 @@
+from itertools import product
+
 differences = []
 
 with open('input.txt', 'r') as file:
